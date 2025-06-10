@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Assistant Portfolio - the Freedom GEEK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: linear-gradient(135deg, #f7fafc 0%, #e6f7fa 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        .header {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(30,144,255,0.08);
+            text-align: center;
+            padding: 2.5rem 1rem 2rem 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid #20cfcf;
+        }
+        .header .fg-logo {
+            width: 90px;
+            height: auto;
+            display: block;
+            margin: 0 auto 1rem auto;
+        }
+        .header h1 {
+            color: #1e90ff;
+            font-size: 2.3rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+        }
+        .header .subtitle {
+            color: #20cfcf;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+        }
+        .header p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+        .resume-link {
+            display: inline-block;
+            margin-top: 0.7rem;
+            color: #fff;
+            background: linear-gradient(90deg, #1e90ff 60%, #20cfcf 100%);
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(30,144,255,0.12);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .resume-link:hover {
+            background: linear-gradient(90deg, #20cfcf 60%, #1e90ff 100%);
+            transform: scale(1.05);
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 0.7rem;
+            color: #fff;
+            background: linear-gradient(90deg, #222 60%, #1e90ff 100%);
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(30,144,255,0.12);
+            transition: background 0.2s, transform 0.2s;
+            margin-left: 0.5rem;
+        }
+        .github-link:hover {
+            background: linear-gradient(90deg, #1e90ff 60%, #222 100%);
+            transform: scale(1.05);
+        }
+        .section {
+            background: #fff;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(30,144,255,0.07);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: box-shadow 0.2s, transform 0.2s, opacity 0.6s, transform 0.6s;
+            position: relative;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section:hover {
+            box-shadow: 0 8px 32px rgba(30,144,255,0.13);
+            transform: scale(1.01);
+        }
+        .section h2 {
+            color: #1e90ff;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #20cfcf;
+            padding-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .section-icon {
+            font-size: 1.3em;
+            color: #20cfcf;
+        }
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #1e90ff 0%, #20cfcf 100%);
+            border: none;
+            margin: 2.5rem 0 2rem 0;
+            border-radius: 2px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .info-block {
+            margin-bottom: 1.2rem;
+        }
+        .skills-list, .exp-list, .edu-list {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 2rem;
+        }
+        .skills-list li, .exp-list li, .edu-list li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.8em;
+            position: relative;
+            min-width: 220px;
+            background: #f7fafc;
+            border-left: 4px solid #20cfcf;
+            border-radius: 6px;
+            padding-top: 0.4em;
+            padding-bottom: 0.4em;
+        }
+        .skills-list li::before, .exp-list li::before, .edu-list li::before {
+            content: '✔';
+            color: #1e90ff;
+            position: absolute;
+            left: 0.5em;
+            font-size: 1.1em;
+            top: 0.7em;
+        }
+        .contact-info {
+            margin-bottom: 1.2rem;
+        }
+        .contact-info p {
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+        .badge {
+            display: inline-block;
+            background: #1e90ff;
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.2rem 0.2rem 0.2rem 0;
+        }
+        @media (max-width: 700px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 1.2rem;
+            }
+            .skills-list, .exp-list, .edu-list {
+                flex-direction: column;
+                gap: 0.7rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="freedomgeeklogo.png" alt="Freedom Geek Logo" class="fg-logo" />
+            <div class="subtitle">Virtual Assistant & Relationship Manager Portfolio</div>
+            <h1>John Andrei Nañola</h1>
+            <p>Customer Service | Relationship Management | Web Development</p>
+            <p><strong>Location:</strong> Santa Mesa, Manila, Philippines</p>
+            <a class="resume-link" href="https://drive.google.com/file/d/1PsF-wSX775Cla01RBdlN9cuPu04M_7Jd/view?usp=sharing" target="_blank">View Resume (CSR)</a>
+            <a class="github-link" href="https://github.com/andrei13spot" target="_blank">GitHub Portfolio</a>
+        </div>
+        <div class="section info-grid">
+            <div class="info-block contact-info">
+                <h2><span class="section-icon">📞</span>Contact</h2>
+                <p>📞 +63 9657221807</p>
+                <p>✉️ amphibians46@gmail.com</p>
+                <p>📍 Santa Mesa, Manila, Philippines</p>
+                <p>🔗 LinkedIn: John Andrei Nañola</p>
+        </div>
+            <div class="info-block">
+                <h2><span class="section-icon">💡</span>Summary</h2>
+                <p>Relationship-driven professional with a strong background in customer service, client support, and web development. Experienced in managing and nurturing client relationships, supporting entrepreneurs, and helping teams stay organized and productive. Adept at problem-solving, communication, and technical support. Ready to make a real impact as a Relationship Manager or Virtual Assistant at Freedom Geek by connecting clients with the right solutions and supporting their business growth. <br><br><em>"I thrive on building trust, solving problems, and making a difference for clients and teams."</em></p>
+            </div>
+        </div>
+        <hr class="divider">
+        <div class="section">
+            <h2><span class="section-icon">🛠️</span>Skills</h2>
+            <ul class="skills-list">
+                <li>Client Relationship Management</li>
+                <li>Customer Service & Escalation Management</li>
+                <li>Call Center Experience</li>
+                <li>Calendar & Schedule Management</li>
+                <li>Email Handling & Inbox Organization</li>
+                <li>Document Formatting & Data Entry</li>
+                <li>Social Media Scheduling (Facebook, Instagram)</li>
+                <li>Online Research & Reporting</li>
+                <li>Basic Graphic Design (Canva, simple ad creatives)</li>
+                <li>File Organization (Google Drive, Dropbox)</li>
+                <li>Client Communication & Follow-ups</li>
+                <li>Web Development (HTML, CSS, JavaScript, Node.js)</li>
+                <li>Experience with HubSpot CRM</li>
+                <li>MS Office Suite Proficient (Word, Excel, PowerPoint)</li>
+                <li>Fluent and Effective English Communication</li>
+                <li>Proactive Problem-Solving</li>
+
+                <li>Remote Work & Time Management</li>
+                <li>Typing Speed: 60-70 WPM (98-100% accuracy)</li>
+            </ul>
+        </div>
+        <hr class="divider">
+        <div class="section">
+            <h2><span class="section-icon">💼</span>Work Experience</h2>
+            <ul class="exp-list">
+                <li><strong>CSR (Financial Account)</strong> – Teleperformance Makati (June 2022 - March 2023)<br>
+                    <span class="badge">Subject Matter Expert</span> <span class="badge">80+ calls/day</span><br>
+                    Handled transaction inquiries, fraud disputes, and provided fast-paced support.
+                </li>
+                <li><strong>CSR (Consumer Tech & Telco Account)</strong> – IQOR Santa Rosa (March 2023 - Sept 2023)<br>
+                    <span class="badge">Top 1 Sales Agent</span><br>
+                    Delivered technical and billing support via calls and emails.
+                </li>
+                <li><strong>CSR (Telco & Sales Account)</strong> – Alorica Cubao (April 2024 - Nov 2024)<br>
+                    Managed billing concerns, disputes, and recognized as top sales and best CSR.
+                </li>
+                <li><strong>Lead Verification Specialist (Remote Work - Loan Account)</strong> – Balboa Digital (Oct 2024 - Dec 2024)<br>
+                    Project-based inbound/outbound lead verification for consumer and business accounts.
+                </li>
+                <li><strong>CSR (Remote Work - Seasonal Healthcare Account)</strong> – Concentrix (Dec 2024 - Mar 2024)<br>
+                    Processed orders, handled inquiries about claims and benefits.
+                </li>
+
+            </ul>
+        </div>
+        <hr class="divider">
+        <div class="section">
+            <h2><span class="section-icon">🎓</span>Education</h2>
+            <ul class="edu-list">
+                <li><strong>Senior High School</strong> – University of Perpetual Help System Laguna (STEM, 2020-2022)</li>
+                <li><strong>College</strong> – Polytechnic University of the Philippines (BS Computer Science, 2023-2024)</li>
+            </ul>
+        </div>
+        <hr class="divider">
+        <div class="section">
+            <h2><span class="section-icon">🌟</span>Why Hire Me?</h2>
+            <ul class="skills-list">
+                <li>Relationship-focused: I build trust and add value for every client</li>
+                <li>Proactive and organized: I keep teams and clients on track</li>
+                <li>Tech-savvy: I support clients with web, CRM, and productivity tools</li>
+                <li>Creative: I design simple graphics and streamline processes</li>
+                <li>Ready for remote, flexible, and global work</li>
+                <li>Committed to long-term growth and client success</li>
+            </ul>
+            <p style="margin-top:1.2em;color:#888;font-size:0.98em;">Inspired by the <a href="https://www.thefreedomgeek.com/wfh/relationship-manager" target="_blank" style="color:#1e90ff;text-decoration:underline;">Freedom Geek Relationship Manager</a> role.</p>
+        </div>
+    </div>
+    <script>
+    // Fade-in on scroll for .section
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+    </script>
+</body>
+</html>
