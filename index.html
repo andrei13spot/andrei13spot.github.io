@@ -14,8 +14,33 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #222;
-            background: linear-gradient(135deg, #f7fafc 0%, #e6f7fa 100%);
             min-height: 100vh;
+            background: linear-gradient(120deg, #1e90ff 0%, #20cfcf 100%);
+            background-size: 200% 200%;
+            animation: gradientMove 10s ease-in-out infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .floating-shape {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.12;
+            z-index: -1;
+            filter: blur(12px);
+            animation: floatShape 16s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        .floating-shape1 { width: 400px; height: 400px; background: #1e90ff; top: 10%; left: 5%; }
+        .floating-shape2 { width: 250px; height: 250px; background: #20cfcf; top: 60%; left: 70%; animation-delay: 4s; }
+        .floating-shape3 { width: 180px; height: 180px; background: #ffb347; top: 70%; left: 15%; animation-delay: 8s; }
+        @keyframes floatShape {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-40px) scale(1.12); }
         }
         .container {
             max-width: 900px;
@@ -32,10 +57,16 @@
             border-bottom: 4px solid #20cfcf;
         }
         .header .fg-logo {
-            width: 90px;
+            width: 180px;
             height: auto;
             display: block;
-            margin: 0 auto 1rem auto;
+            margin: 0 auto 1.5rem auto;
+            transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+            box-shadow: 0 8px 32px rgba(30,144,255,0.18);
+        }
+        .header .fg-logo:hover {
+            transform: scale(1.13) rotate(-4deg);
+            box-shadow: 0 16px 48px rgba(30,144,255,0.22);
         }
         .header h1 {
             color: #1e90ff;
@@ -87,33 +118,45 @@
             transform: scale(1.05);
         }
         .section {
-            background: #fff;
+            background: rgba(255,255,255,0.92);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(30,144,255,0.08);
             margin-bottom: 2rem;
-            border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 4px 16px rgba(30,144,255,0.07);
             opacity: 0;
-            transform: translateY(30px);
-            transition: box-shadow 0.2s, transform 0.2s, opacity 0.6s, transform 0.6s;
+            transform: translateY(30px) scale(0.98);
+            transition: none;
             position: relative;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            animation: borderAnim 8s linear infinite;
+        }
+        @keyframes borderAnim {
+            0% { border-image: linear-gradient(120deg, #1e90ff, #20cfcf, #ffb347, #1e90ff) 1; }
+            100% { border-image: linear-gradient(420deg, #1e90ff, #20cfcf, #ffb347, #1e90ff) 1; }
         }
         .section.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
         .section:hover {
             box-shadow: 0 8px 32px rgba(30,144,255,0.13);
-            transform: scale(1.01);
         }
         .section h2 {
             color: #1e90ff;
             margin-bottom: 1.2rem;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             border-bottom: 2px solid #20cfcf;
             padding-bottom: 0.4rem;
             display: flex;
             align-items: center;
             gap: 0.5em;
+            letter-spacing: 0.5px;
+            animation: jetonHeaderFade 1.2s cubic-bezier(.4,2,.6,1);
+        }
+        @keyframes jetonHeaderFade {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
         .section-icon {
             font-size: 1.3em;
@@ -151,6 +194,7 @@
             border-radius: 6px;
             padding-top: 0.4em;
             padding-bottom: 0.4em;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
         .skills-list li::before, .exp-list li::before, .edu-list li::before {
             content: '✔';
@@ -159,6 +203,11 @@
             left: 0.5em;
             font-size: 1.1em;
             top: 0.7em;
+        }
+        .skills-list li:hover, .exp-list li:hover, .edu-list li:hover {
+            box-shadow: 0 4px 18px rgba(30,144,255,0.13);
+            transform: scale(1.03) translateY(-2px);
+            background: #e6f7fa;
         }
         .contact-info {
             margin-bottom: 1.2rem;
@@ -176,9 +225,29 @@
             font-size: 0.85rem;
             margin: 0.2rem 0.2rem 0.2rem 0;
         }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #1e90ff 60%, #20cfcf 100%);
+            color: #fff;
+            padding: 0.7em 2em;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 2px 12px rgba(30,144,255,0.12);
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            animation: pulseBtn 2.5s infinite;
+        }
+        @keyframes pulseBtn {
+            0%, 100% { box-shadow: 0 2px 12px rgba(30,144,255,0.12); }
+            50% { box-shadow: 0 4px 32px #20cfcf44; }
+        }
         @media (max-width: 700px) {
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 8px;
             }
             .section {
                 padding: 1.2rem;
@@ -188,9 +257,286 @@
                 gap: 0.7rem 0;
             }
         }
+        /* Sticky glassmorphism navbar */
+        .sticky-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 16px rgba(30,144,255,0.10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.7em 0;
+            margin-bottom: 1.5em;
+        }
+        .sticky-navbar a {
+            color: #1e90ff;
+            font-weight: 600;
+            margin: 0 1.2em;
+            text-decoration: none;
+            font-size: 1.08em;
+            transition: color 0.2s;
+        }
+        .sticky-navbar a:hover {
+            color: #20cfcf;
+        }
+        /* Scroll-to-top button */
+        .scroll-top-btn {
+            position: fixed;
+            right: 2.2em;
+            bottom: 2.2em;
+            z-index: 200;
+            background: linear-gradient(90deg, #1e90ff 60%, #20cfcf 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 54px;
+            height: 54px;
+            font-size: 2em;
+            box-shadow: 0 4px 18px #1e90ff44;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.85;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .scroll-top-btn:hover {
+            opacity: 1;
+            transform: scale(1.08);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Scroll progress bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1e90ff 60%, #20cfcf 100%);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.2s;
+        }
+        /* Dark/Light mode toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1.2em;
+            right: 1.2em;
+            z-index: 1001;
+            background: #fff;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            box-shadow: 0 2px 12px #1e90ff22;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+        .theme-toggle svg {
+            width: 28px; height: 28px;
+        }
+        body.dark {
+            background: linear-gradient(120deg, #181c2f 0%, #1e90ff 100%);
+            color: #f7fafc;
+        }
+        body.dark .section {
+            background: rgba(24,28,47,0.97);
+            color: #f7fafc;
+            border: 3px solid #222e4a;
+            transition: none;
+            backdrop-filter: none;
+        }
+        body.dark .section h2,
+        body.dark .section .section-icon {
+            color: #20cfcf;
+            border-bottom: 2px solid #1e90ff;
+        }
+        body.dark .info-block,
+        body.dark .contact-info p,
+        body.dark .stat-label,
+        body.dark .skills-list li,
+        body.dark .exp-list li,
+        body.dark .edu-list li {
+            color: #e0f7fa;
+        }
+        body.dark .skills-list li,
+        body.dark .exp-list li,
+        body.dark .edu-list li {
+            background: #232a45;
+            border-left: 4px solid #20cfcf;
+        }
+        body.dark .skills-list li:hover,
+        body.dark .exp-list li:hover,
+        body.dark .edu-list li:hover {
+            background: #1e90ff22;
+        }
+        body.dark .badge {
+            background: #20cfcf;
+            color: #181c2f;
+        }
+        body.dark .divider {
+            background: linear-gradient(90deg, #20cfcf 0%, #1e90ff 100%);
+        }
+        body.dark .resume-link, body.dark .cta-btn {
+            background: linear-gradient(90deg, #20cfcf 60%, #1e90ff 100%);
+            color: #fff;
+            box-shadow: 0 2px 12px #20cfcf33;
+        }
+        body.dark .resume-link:hover, body.dark .cta-btn:hover {
+            background: linear-gradient(90deg, #1e90ff 60%, #20cfcf 100%);
+        }
+        body.dark .github-link {
+            background: linear-gradient(90deg, #232a45 60%, #1e90ff 100%);
+            color: #fff;
+        }
+        body.dark .github-link:hover {
+            background: linear-gradient(90deg, #1e90ff 60%, #232a45 100%);
+        }
+        body.dark .sticky-navbar {
+            background: rgba(24,28,47,0.85);
+            box-shadow: 0 2px 16px #1e90ff22;
+        }
+        body.dark .sticky-navbar a {
+            color: #20cfcf;
+        }
+        body.dark .sticky-navbar a:hover {
+            color: #fff;
+        }
+        body.dark .wave-divider path {
+            fill: #1e90ff;
+            fill-opacity: 0.13;
+        }
+        body.dark .custom-cursor {
+            background: rgba(32,207,207,0.18);
+            border: 2px solid #1e90ff;
+        }
+        body.dark .header {
+            background: #232a45;
+            border-bottom: 4px solid #20cfcf;
+        }
+        body.dark .header h1 {
+            color: #20cfcf;
+        }
+        body.dark .header .subtitle {
+            color: #1e90ff;
+        }
+        body.dark .header p,
+        body.dark .header strong {
+            color: #e0f7fa;
+        }
+        body.dark .scroll-top-btn {
+            background: linear-gradient(90deg, #20cfcf 60%, #1e90ff 100%);
+            color: #fff;
+        }
+        body.dark .scroll-top-btn:hover {
+            background: linear-gradient(90deg, #1e90ff 60%, #20cfcf 100%);
+        }
+        body.dark .theme-toggle {
+            background: #232a45;
+        }
+        body.dark .theme-toggle svg circle {
+            stroke: #20cfcf;
+        }
+        body.dark .theme-toggle svg path {
+            stroke: #fff;
+        }
+        /* Animated number counters */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2.5em;
+            margin: 2em 0 1em 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat .stat-num {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #1e90ff;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .stat .stat-label {
+            color: #20cfcf;
+            font-size: 1em;
+            margin-top: 0.2em;
+        }
+        /* Animated SVG icon for buttons */
+        .resume-link svg, .cta-btn svg {
+            vertical-align: middle;
+            margin-right: 0.5em;
+            transition: transform 0.2s;
+        }
+        .resume-link:hover svg, .cta-btn:hover svg {
+            transform: scale(1.18) rotate(-8deg);
+        }
+        /* Animated section divider */
+        .wave-divider {
+            width: 100%;
+            height: 36px;
+            display: block;
+            margin: -2em 0 2em 0;
+        }
+        /* Custom animated cursor */
+        .custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: rgba(30,144,255,0.18);
+            border: 2px solid #20cfcf;
+            pointer-events: none;
+            z-index: 20000;
+            transform: translate(-50%, -50%);
+            transition: background 0.2s, border 0.2s, transform 0.08s;
+        }
+        body.dark .custom-cursor {
+            background: rgba(32,207,207,0.18);
+            border: 2px solid #1e90ff;
+        }
+        body.dark .section p,
+        body.dark .section span,
+        body.dark .section strong,
+        body.dark .section div,
+        body.dark .section a {
+            color: #e0f7fa !important;
+        }
+        body.dark .section {
+            transition: none;
+        }
+        body.dark .header,
+        body.dark .container {
+            transition: none;
+        }
+        /* Keep transitions only on interactive elements */
+        .resume-link, .cta-btn, .github-link, .skills-list li, .exp-list li, .edu-list li, .sticky-navbar a, .scroll-top-btn, .theme-toggle {
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
     </style>
 </head>
 <body>
+    <div id="scroll-progress"></div>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="6" stroke="#1e90ff" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#20cfcf" stroke-width="2"/></svg>
+    </button>
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="floating-shape floating-shape1"></div>
+    <div class="floating-shape floating-shape2"></div>
+    <div class="floating-shape floating-shape3"></div>
+    <nav class="sticky-navbar">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#certificate">Certificate</a>
+        <a href="#whyhire">Why Hire Me?</a>
+    </nav>
     <div class="container">
         <div class="header">
             <img src="freedomgeeklogo.png" alt="Freedom Geek Logo" class="fg-logo" />
@@ -198,9 +544,10 @@
             <h1>John Andrei Nañola</h1>
             <p>Customer Service | Relationship Management | Web Development</p>
             <p><strong>Location:</strong> Santa Mesa, Manila, Philippines</p>
-            <a class="resume-link" href="https://drive.google.com/file/d/1PsF-wSX775Cla01RBdlN9cuPu04M_7Jd/view?usp=sharing" target="_blank">View Resume (CSR)</a>
-            <a class="github-link" href="https://github.com/andrei13spot" target="_blank">GitHub Portfolio</a>
+            <a class="resume-link" href="https://drive.google.com/file/d/1PsF-wSX775Cla01RBdlN9cuPu04M_7Jd/view?usp=sharing" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 16V4M12 16l-4-4M12 16l4-4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="18" width="16" height="2" rx="1" fill="#fff"/></svg>View Resume (CSR)</a>
+            <a class="github-link" href="https://github.com/andrei13spot" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85 0 1.33-.01 2.4-.01 2.73 0 .27.16.58.67.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" fill="#fff"/></svg>GitHub Portfolio</a>
         </div>
+        <svg class="wave-divider" viewBox="0 0 1440 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 18C120 36 360 36 720 18C1080 0 1320 0 1440 18V36H0V18Z" fill="#20cfcf" fill-opacity="0.13"/></svg>
         <div class="section info-grid">
             <div class="info-block contact-info">
                 <h2><span class="section-icon">📞</span>Contact</h2>
@@ -215,7 +562,7 @@
             </div>
         </div>
         <hr class="divider">
-        <div class="section">
+        <div class="section" id="skills">
             <h2><span class="section-icon">🛠️</span>Skills</h2>
             <ul class="skills-list">
                 <li>Client Relationship Management</li>
@@ -240,7 +587,7 @@
             </ul>
         </div>
         <hr class="divider">
-        <div class="section">
+        <div class="section" id="experience">
             <h2><span class="section-icon">💼</span>Work Experience</h2>
             <ul class="exp-list">
                 <li><strong>CSR (Financial Account)</strong> – Teleperformance Makati (June 2022 - March 2023)<br>
@@ -263,7 +610,7 @@
             </ul>
         </div>
         <hr class="divider">
-        <div class="section">
+        <div class="section" id="education">
             <h2><span class="section-icon">🎓</span>Education</h2>
             <ul class="edu-list">
                 <li><strong>Senior High School</strong> – University of Perpetual Help System Laguna (STEM, 2020-2022)</li>
@@ -271,19 +618,19 @@
             </ul>
         </div>
         <hr class="divider">
-        <div class="section">
+        <div class="section" id="certificate">
             <h2><span class="section-icon">📜</span>Certificate</h2>
             <div style="display: flex; flex-direction: column; align-items: center;">
                 <div style="text-align: center;">
                     <strong>Working as a Virtual Assistant</strong><br>
                     <span style="color: #1e90ff; font-weight: 500;">Alison (CPD Certified)</span>
                     <p style="margin: 0.7em 0 0.5em 0; color: #444; font-size: 1em;">Awarded for successfully completing the Alison course on Working as a Virtual Assistant. This free certification demonstrates proficiency in virtual assistant skills, client support, and remote work best practices.</p>
-                    <a href="https://drive.google.com/file/d/1iD428AoMuxZQRdH2PQ7LeH57ijvC2YA5/view?usp=sharing" target="_blank" style="display:inline-block; margin-top:0.5em; color:#fff; background:linear-gradient(90deg,#1e90ff 60%,#20cfcf 100%); padding:0.4em 1.1em; border-radius:7px; text-decoration:none; font-weight:600; box-shadow:0 2px 8px rgba(30,144,255,0.12); transition:background 0.2s,transform 0.2s;">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/1iD428AoMuxZQRdH2PQ7LeH57ijvC2YA5/view?usp=sharing" target="_blank" class="resume-link" style="margin-top:0.5em;"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 16V4M12 16l-4-4M12 16l4-4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="18" width="16" height="2" rx="1" fill="#fff"/></svg>View Certificate</a>
                 </div>
             </div>
         </div>
         <hr class="divider">
-        <div class="section">
+        <div class="section" id="whyhire">
             <h2><span class="section-icon">🌟</span>Why Hire Me?</h2>
             <ul class="skills-list">
                 <li>Relationship-focused: I build trust and add value for every client</li>
@@ -296,7 +643,74 @@
             <p style="margin-top:1.2em;color:#888;font-size:0.98em;">Inspired by the <a href="https://www.thefreedomgeek.com/wfh/relationship-manager" target="_blank" style="color:#1e90ff;text-decoration:underline;">Freedom Geek Relationship Manager</a> role.</p>
         </div>
     </div>
+    <svg class="wave-divider" viewBox="0 0 1440 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 18C120 36 360 36 720 18C1080 0 1320 0 1440 18V36H0V18Z" fill="#20cfcf" fill-opacity="0.13"/></svg>
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Back to top">↑</button>
     <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+        const scrollProgress = document.getElementById('scroll-progress');
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrolled = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrolled + '%';
+    });
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    themeToggle.onclick = () => {
+        document.body.classList.toggle('dark');
+        if(document.body.classList.contains('dark')) {
+            themeIcon.innerHTML = '<circle cx="12" cy="12" r="6" stroke="#fff" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#20cfcf" stroke-width="2"/>';
+        } else {
+            themeIcon.innerHTML = '<circle cx="12" cy="12" r="6" stroke="#1e90ff" stroke-width="2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="#20cfcf" stroke-width="2"/>';
+        }
+    };
+    // Animated number counters
+    function animateCounters() {
+        document.querySelectorAll('.stat-num').forEach(el => {
+            const target = +el.getAttribute('data-target');
+            let count = 0;
+            const step = Math.ceil(target / 60);
+            function update() {
+                count += step;
+                if(count > target) count = target;
+                el.textContent = count;
+                if(count < target) requestAnimationFrame(update);
+            }
+            update();
+        });
+    }
+    window.addEventListener('DOMContentLoaded', animateCounters);
+    // Custom animated cursor
+    const customCursor = document.getElementById('customCursor');
+    document.addEventListener('mousemove', e => {
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => customCursor.style.transform = 'scale(1.4)');
+        el.addEventListener('mouseleave', () => customCursor.style.transform = 'scale(1)');
+    });
+    // Parallax effect for floating shapes
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        document.querySelector('.floating-shape1').style.transform = `translateY(${scrollY * 0.08}px)`;
+        document.querySelector('.floating-shape2').style.transform = `translateY(${scrollY * 0.13}px)`;
+        document.querySelector('.floating-shape3').style.transform = `translateY(${scrollY * 0.18}px)`;
+    });
+    // Scroll-to-top button functionality
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.style.display = 'flex';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
+    scrollTopBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    scrollTopBtn.style.display = 'none';
     // Fade-in on scroll for .section
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver((entries, obs) => {
