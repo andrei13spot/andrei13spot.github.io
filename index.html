@@ -28,17 +28,19 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">John Andrei Nañola</a>
+            <a href="#top" class="nav-logo" onclick="scrollToTop(); return false;">
+                <i class="fas fa-laptop-house"></i> VA Andrei
+            </a>
             <ul class="nav-menu">
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#certificates">Certificates</a></li>
                 <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Credentials <i class="fas fa-caret-down"></i></a>
+                    <a href="#" class="dropdown-toggle">Portfolio <i class="fas fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
+                        <li><a href="#certificates">Certificates</a></li>
+                        <li><a href="#graphic-design">Graphic Design</a></li>
                         <li><a href="#social-media">Social Media</a></li>
                         <li><a href="#development">Development</a></li>
-                        <li><a href="#graphic-design">Graphic Design</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact">Contact</a></li>
@@ -49,11 +51,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
+        <div class="floating-element large"></div>
+        <div class="floating-element medium"></div>
+        <div class="floating-element small"></div>
         <div class="hero-content fade-in">
             <h1>Virtual Assistant Portfolio</h1>
+            <h2 class="hero-subtitle">John Andrei Nañola</h2>
             <p class="subtitle">Building meaningful relationships and driving business growth through exceptional client support and technical expertise</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">
@@ -72,7 +75,9 @@
     <div class="main-content">
         <!-- Skills Section -->
         <section id="skills" class="section">
-            <div class="floating-element"></div>
+            <div class="floating-element large"></div>
+            <div class="floating-element medium"></div>
+            <div class="floating-element small"></div>
             <h2 class="section-title fade-in">Skills & Expertise</h2>
             <p class="section-subtitle fade-in">Comprehensive skill set covering relationship management, technical support, and business operations</p>
             
@@ -80,7 +85,7 @@
                 <div class="skill-category scale-in">
                     <h4><i class="fas fa-users"></i> Relationship Management</h4>
                     <ul class="skill-list">
-                        <li>Client Relationship Management</li>
+                <li>Client Relationship Management</li>
                         <li>Customer Service & Escalation</li>
                         <li>Client Communication & Follow-ups</li>
                         <li>Client Onboarding & Training</li>
@@ -106,11 +111,11 @@
                 <div class="skill-category scale-in">
                     <h4><i class="fas fa-tasks"></i> Business Operations</h4>
                     <ul class="skill-list">
-                        <li>Calendar & Schedule Management</li>
-                        <li>Email Handling & Inbox Organization</li>
-                        <li>Document Formatting & Data Entry</li>
+                <li>Calendar & Schedule Management</li>
+                <li>Email Handling & Inbox Organization</li>
+                <li>Document Formatting & Data Entry</li>
                         <li>Social Media Scheduling</li>
-                        <li>File Organization (Google Drive, Dropbox)</li>
+                <li>File Organization (Google Drive, Dropbox)</li>
                         <li>Travel Arrangements & Itinerary Planning</li>
                         <li>Meeting Coordination & Minute Taking</li>
                     </ul>
@@ -133,8 +138,8 @@
                         <li>Content Creation & Scheduling</li>
                         <li>Branding & Campaigns</li>
                         <li>Engagement & Analytics</li>
-                    </ul>
-                </div>
+            </ul>
+        </div>
                 <div class="skill-category scale-in">
                     <h4><i class="fas fa-paint-brush"></i> Web & Graphic Designing</h4>
                     <ul class="skill-list">
@@ -142,14 +147,16 @@
                         <li>Brochure & Social Media Graphics</li>
                         <li>Web Design (Wix, HTML/CSS)</li>
                         <li>Tools: Canva, Picsart, Publisher, Illustrator</li>
-                    </ul>
-                </div>
+            </ul>
+        </div>
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="section">
-            <div class="floating-element"></div>
+            <div class="floating-element large"></div>
+            <div class="floating-element medium"></div>
+            <div class="floating-element small"></div>
             <h2 class="section-title fade-in">Professional Experience</h2>
             <p class="section-subtitle fade-in">A proven track record of excellence across diverse industries and roles</p>
             
@@ -203,260 +210,305 @@
 
         <!-- Certificates Section -->
         <section id="certificates" class="section">
-            <div class="floating-element"></div>
             <h2 class="section-title fade-in">Professional Certifications</h2>
             <p class="section-subtitle fade-in">Continuous learning and professional development to deliver exceptional value</p>
             
-            <div class="certificates-container">
-                <div class="certificates-scroll">
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="certificate-title">Working as a Virtual Assistant</div>
-                        <div class="certificate-issuer">Alison (CPD Certified)</div>
-                        <div class="certificate-description">Comprehensive certification demonstrating proficiency in virtual assistant skills, client support, and remote work best practices. Covers essential VA competencies and industry standards.</div>
-                        <a href="https://drive.google.com/file/d/1iD428AoMuxZQRdH2PQ7LeH57ijvC2YA5/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
+            <div class="certificates-grid">
+                <!-- Initial visible certificates -->
+                <div class="certificate-card scale-in">
+                    <div class="certificate-icon">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="certificate-title">Introduction to Zoho CRM</div>
-                        <div class="certificate-issuer">Alison (CPD Certified)</div>
-                        <div class="certificate-description">Professional certification in Zoho CRM management, client relationship tracking, and business process automation. Demonstrates advanced CRM administration skills.</div>
-                        <a href="https://drive.google.com/file/d/1klcxc_WhsPi8mgwvinW-d92WYHeQYeXj/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                    
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <div class="certificate-title">Roles and Responsibilities of Virtual Assistants</div>
-                        <div class="certificate-issuer">Alison (CPD Certified)</div>
-                        <div class="certificate-description">Comprehensive certification covering the essential roles, responsibilities, and best practices for virtual assistants. Demonstrates deep understanding of VA industry standards and client service excellence.</div>
-                        <a href="https://drive.google.com/file/d/1v4kM6ToMbr-nrYHZ6k8zIdLFaTLtY2nw/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <div class="certificate-title">How to Become an Executive Personal Assistant</div>
-                        <div class="certificate-issuer">Alison (CPD Certified)</div>
-                        <div class="certificate-description">Certification covering advanced executive support, calendar and travel management, professional communication, and high-level organizational skills. Demonstrates expertise in supporting executives and managing confidential tasks.</div>
-                        <a href="https://drive.google.com/file/d/1hOhh5P3ArvQ52u-_Czc62oxfaEK2xLya/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
+                    <div class="certificate-title">Working as a Virtual Assistant</div>
+                    <div class="certificate-issuer">Alison (CPD Certified)</div>
+                    <div class="certificate-description">Comprehensive certification demonstrating proficiency in virtual assistant skills, client support, and remote work best practices. Covers essential VA competencies and industry standards.</div>
+                    <a href="https://drive.google.com/file/d/1iD428AoMuxZQRdH2PQ7LeH57ijvC2YA5/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
                 </div>
+                
+                <div class="certificate-card scale-in">
+                    <div class="certificate-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="certificate-title">Introduction to Zoho CRM</div>
+                    <div class="certificate-issuer">Alison (CPD Certified)</div>
+                    <div class="certificate-description">Professional certification in Zoho CRM management, client relationship tracking, and business process automation. Demonstrates advanced CRM administration skills.</div>
+                    <a href="https://drive.google.com/file/d/1klcxc_WhsPi8mgwvinW-d92WYHeQYeXj/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+                
+                <div class="certificate-card scale-in">
+                    <div class="certificate-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="certificate-title">Roles and Responsibilities of Virtual Assistants</div>
+                    <div class="certificate-issuer">Alison (CPD Certified)</div>
+                    <div class="certificate-description">Comprehensive certification covering the essential roles, responsibilities, and best practices for virtual assistants. Demonstrates deep understanding of VA industry standards and client service excellence.</div>
+                    <a href="https://drive.google.com/file/d/1v4kM6ToMbr-nrYHZ6k8zIdLFaTLtY2nw/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+
+                <div class="certificate-card scale-in">
+                    <div class="certificate-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <div class="certificate-title">How to Become an Executive Personal Assistant</div>
+                    <div class="certificate-issuer">Alison (CPD Certified)</div>
+                    <div class="certificate-description">Certification covering advanced executive support, calendar and travel management, professional communication, and high-level organizational skills. Demonstrates expertise in supporting executives and managing confidential tasks.</div>
+                    <a href="https://drive.google.com/file/d/1hOhh5P3ArvQ52u-_Czc62oxfaEK2xLya/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+
+                <!-- Hidden certificates (initially) -->
+                <div class="certificate-card scale-in hidden-cert">
+                    <div class="certificate-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="certificate-title">Executive Assistant Mastery</div>
+                    <div class="certificate-issuer">Alison (CPD Certified)</div>
+                    <div class="certificate-description">Advanced certification demonstrating mastery in executive assistance, strategic support, and high-level business operations. Covers leadership communication, project management, and executive office administration.</div>
+                    <a href="https://drive.google.com/file/d/1PG0rDB9Ab64O-Aa266CFTig3cUiA79DX/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="show-more-container">
+                <button id="showMoreCerts" class="show-more-btn">
+                    <span class="show-more-text">Show More</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </section>
 
-        <!-- Graphic Design Credentials Section (make scrollable) -->
+        <!-- Graphic Design Credentials Section -->
         <section id="graphic-design" class="section">
-            <div class="floating-element"></div>
             <h2 class="section-title fade-in">Graphic Design Credentials</h2>
             <p class="section-subtitle fade-in">Showcasing creative works for clients and personal projects using a variety of design tools</p>
-            <div class="certificates-container">
-                <div class="certificates-scroll">
-                    <!-- Trub Kicks -->
-                    <div class="certificate-card scale-in">
-                        <img src="trublogo.png" alt="Trub Kicks Logo Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        <div class="certificate-icon">
-                            <i class="fas fa-shoe-prints"></i>
-                        </div>
-                        <div class="certificate-title">Trub Kicks Social Media Design</div>
-                        <div class="certificate-issuer">Personal Business Project</div>
-                        <div class="certificate-description">Social media graphics for our small shoe reselling business page.</div>
-                        <div class="certificate-description"><strong>Tools:</strong> Picsart</div>
-                        <a href="https://drive.google.com/file/d/1cutagw4s2mjYazmv9ajN4yWnFub32Q1d/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Work
-                        </a>
+            <div class="portfolio-grid">
+                <!-- Initial visible items (2) -->
+                <!-- Hydro Sonic -->
+                <div class="certificate-card scale-in">
+                    <img src="hydrosonic.png" alt="Hydro Sonic Branding" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    <div class="certificate-icon">
+                        <i class="fas fa-tint"></i>
                     </div>
-                    <!-- Pandy Brochure -->
-                    <div class="certificate-card scale-in">
-                        <img src="pandy.png" alt="Pandy Brochure Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        <div class="certificate-icon">
-                            <i class="fas fa-cookie-bite"></i>
-                        </div>
-                        <div class="certificate-title">Pandy Brochure</div>
-                        <div class="certificate-issuer">Client Project</div>
-                        <div class="certificate-description">Brochure design for a newly launched cookie business.</div>
-                        <div class="certificate-description"><strong>Tools:</strong> Microsoft Publisher</div>
-                        <a href="https://drive.google.com/file/d/1e9WFvYdje9Wx3X9RKyaSI177S0tOxM2R/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Work
-                        </a>
-                    </div>
-                    <!-- Carl's Cream -->
-                    <div class="certificate-card scale-in">
-                        <img src="carlscream.png" alt="Carl's Cream Branding" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        <div class="certificate-icon">
-                            <i class="fas fa-ice-cream"></i>
-                        </div>
-                        <div class="certificate-title">Carl's Cream Branding</div>
-                        <div class="certificate-issuer">Client Project</div>
-                        <div class="certificate-description">Branding and design for an ice cream business.</div>
-                        <div class="certificate-description"><strong>Tools:</strong> Microsoft Publisher, Canva</div>
-                        <a href="https://drive.google.com/file/d/1jWJl3w4oowvRAlYI6C4aDVhMeK_aW8_p/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Work
-                        </a>
-                    </div>
-                    <!-- Hydro Sonic -->
-                    <div class="certificate-card scale-in">
-                        <img src="hydrosonic.png" alt="Hydro Sonic Branding" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        <div class="certificate-icon">
-                            <i class="fas fa-tint"></i>
-                        </div>
-                        <div class="certificate-title">Hydro Sonic Branding</div>
-                        <div class="certificate-issuer">Client Project</div>
-                        <div class="certificate-description">Branding for a water refilling station, including logo design.</div>
-                        <div class="certificate-description"><strong>Tools:</strong> Canva, Microsoft Publisher, Adobe Illustrator (logo)</div>
-                        <a href="https://drive.google.com/file/d/1n9qmh0ZP8C24rXXfV3W9vgSxsd5L3HsR/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Work
-                        </a>
-                    </div>
-                    <!-- Fido Facters -->
-                    <div class="certificate-card scale-in">
-                        <img src="factersinterface.png" alt="Fido Facters App Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        <div class="certificate-icon">
-                            <i class="fas fa-dog"></i>
-                        </div>
-                        <div class="certificate-title">Fido Facters App Design</div>
-                        <div class="certificate-issuer">Academic Collaboration</div>
-                        <div class="certificate-description">Fact-checking application design for academic work.</div>
-                        <div class="certificate-description"><strong>Tools:</strong> Canva</div>
-                        <a href="https://drive.google.com/file/d/10isFxWb2Jh5vk4hGsGLyMYzaEQrHLt2n/view?usp=sharing" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Work
-                        </a>
-                    </div>
-                    <!-- Facters Logo -->
-                    <div class="certificate-card scale-in">
-                        <img src="facterslogo.png" alt="Facters Logo Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        <div class="certificate-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="certificate-title">Facters Logo</div>
-                        <div class="certificate-issuer">Logo Design</div>
-                        <div class="certificate-description">Logo for Facters, a fact-checking app.</div>
-                        <div class="certificate-description"><strong>Tools:</strong> Picsart</div>
-                        <a href="https://drive.google.com/file/d/1NC7WezY-dk7sTj1-Bbg_2V86VMm286d6/view?usp=drive_link" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Work
-                        </a>
-                    </div>
+                    <div class="certificate-title">Hydro Sonic Branding</div>
+                    <div class="certificate-issuer">Client Project</div>
+                    <div class="certificate-description">Branding for a water refilling station, including logo design.</div>
+                    <div class="certificate-description"><strong>Tools:</strong> Canva, Microsoft Publisher, Adobe Illustrator (logo)</div>
+                    <a href="https://drive.google.com/file/d/1n9qmh0ZP8C24rXXfV3W9vgSxsd5L3HsR/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Work
+                    </a>
                 </div>
+                <!-- Fido Facters -->
+                <div class="certificate-card scale-in">
+                    <img src="factersinterface.png" alt="Fido Facters App Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    <div class="certificate-icon">
+                        <i class="fas fa-dog"></i>
+                    </div>
+                    <div class="certificate-title">Fido Facters App Design</div>
+                    <div class="certificate-issuer">Academic Collaboration</div>
+                    <div class="certificate-description">Fact-checking application design for academic work.</div>
+                    <div class="certificate-description"><strong>Tools:</strong> Canva</div>
+                    <a href="https://drive.google.com/file/d/10isFxWb2Jh5vk4hGsGLyMYzaEQrHLt2n/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Work
+                    </a>
+                </div>
+
+                <!-- Hidden items (4) -->
+                <div class="certificate-card scale-in hidden-design">
+                    <!-- Carl's Cream -->
+                    <img src="carlscream.png" alt="Carl's Cream Branding" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    <div class="certificate-icon">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <div class="certificate-title">Carl's Cream Branding</div>
+                    <div class="certificate-issuer">Client Project</div>
+                    <div class="certificate-description">Branding and design for an ice cream business.</div>
+                    <div class="certificate-description"><strong>Tools:</strong> Microsoft Publisher, Canva</div>
+                    <a href="https://drive.google.com/file/d/1jWJl3w4oowvRAlYI6C4aDVhMeK_aW8_p/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Work
+                    </a>
+                </div>
+                <div class="certificate-card scale-in hidden-design">
+                    <!-- Facters Logo -->
+                    <img src="facterslogo.png" alt="Facters Logo Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    <div class="certificate-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certificate-title">Facters Logo</div>
+                    <div class="certificate-issuer">Logo Design</div>
+                    <div class="certificate-description">Logo for Facters, a fact-checking app.</div>
+                    <div class="certificate-description"><strong>Tools:</strong> Picsart</div>
+                    <a href="https://drive.google.com/file/d/1NC7WezY-dk7sTj1-Bbg_2V86VMm286d6/view?usp=drive_link" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Work
+                    </a>
+                </div>
+                <div class="certificate-card scale-in hidden-design">
+                    <!-- Pandy -->
+                    <img src="pandy.png" alt="Pandy Brochure Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    <div class="certificate-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="certificate-title">Pandy Brochure</div>
+                    <div class="certificate-issuer">Client Project</div>
+                    <div class="certificate-description">Brochure design for a newly launched cookie business.</div>
+                    <div class="certificate-description"><strong>Tools:</strong> Microsoft Publisher</div>
+                    <a href="https://drive.google.com/file/d/1e9WFvYdje9Wx3X9RKyaSI177S0tOxM2R/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Work
+                    </a>
+                </div>
+                <div class="certificate-card scale-in hidden-design">
+                    <!-- Trub Kicks -->
+                    <img src="trublogo.png" alt="Trub Kicks Logo Design" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.75rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    <div class="certificate-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <div class="certificate-title">Trub Kicks Social Media Design</div>
+                    <div class="certificate-issuer">Personal Business Project</div>
+                    <div class="certificate-description">Social media graphics for our small shoe reselling business page.</div>
+                    <div class="certificate-description"><strong>Tools:</strong> Picsart</div>
+                    <a href="https://drive.google.com/file/d/1cutagw4s2mjYazmv9ajN4yWnFub32Q1d/view?usp=sharing" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Work
+                    </a>
+                </div>
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="show-more-container">
+                <button id="showMoreDesign" class="show-more-btn">
+                    <span class="show-more-text">Show More</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </section>
 
-        <!-- Social Media Management Section (make scrollable) -->
+        <!-- Social Media Management Section -->
         <section id="social-media" class="section">
-            <div class="floating-element"></div>
             <h2 class="section-title fade-in">Social Media Management</h2>
             <p class="section-subtitle fade-in">Pages and campaigns managed, including content creation, branding, and community engagement</p>
-            <div class="certificates-container">
-                <div class="certificates-scroll">
-                    <!-- ShadesOfYou -->
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-title">ShadesOfYou</div>
-                        <div class="certificate-issuer">Awareness Campaign</div>
-                        <div class="certificate-description">A page dedicated to raising awareness about colorism and empowering people to love their own skin and be confident in their authentic selves.</div>
-                        <div class="social-media-followers"><i class="fas fa-users"></i> 454 followers</div>
-                        <div class="social-media-images">
-                            <img src="ShadesOfYou.png" alt="ShadesOfYou Page Screenshot" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.5rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                            <img src="ShadesOfYouPost.png" alt="ShadesOfYou Sample Post" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        </div>
-                        <a href="https://theshadesofyou.wixsite.com/campaign" target="_blank" class="certificate-btn" style="margin-top:0.75rem;">
-                            <i class="fas fa-globe"></i>
-                            Visit Wix Site
-                        </a>
+            <div class="portfolio-grid">
+                <!-- Initial visible items (2) -->
+                <!-- ShadesOfYou -->
+                <div class="certificate-card scale-in">
+                    <div class="certificate-title">ShadesOfYou</div>
+                    <div class="certificate-issuer">Awareness Campaign</div>
+                    <div class="certificate-description">A page dedicated to raising awareness about colorism and empowering people to love their own skin and be confident in their authentic selves.</div>
+                    <div class="social-media-followers"><i class="fas fa-users"></i> 454 followers</div>
+                    <div class="social-media-images">
+                        <img src="ShadesOfYou.png" alt="ShadesOfYou Page Screenshot" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;margin-bottom:0.5rem;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                        <img src="ShadesOfYouPost.png" alt="ShadesOfYou Sample Post" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
                     </div>
-                    <!-- SLG (South League Gaming) -->
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-title">South League Gaming (SLG)</div>
-                        <div class="certificate-issuer">Gaming Community Page</div>
-                        <div class="certificate-description">A gaming page created and managed with friends, focused on community engagement and gaming content.</div>
-                        <div class="social-media-followers"><i class="fas fa-users"></i> 397 followers</div>
-                        <div class="social-media-images">
-                            <img src="SLG.png" alt="SLG Page Screenshot" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        </div>
-                    </div>
-                    <!-- TRUB-aparrels -->
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-title">TRUB-aparrels</div>
-                        <div class="certificate-issuer">Small Business Page</div>
-                        <div class="certificate-description">A business page for reselling OEM shoes, managed content, branding, and customer engagement.</div>
-                        <div class="social-media-followers"><i class="fas fa-thumbs-up"></i> 122 likes &nbsp; <i class="fas fa-users"></i> 113 followers</div>
-                        <div class="social-media-images">
-                            <img src="TRUB-Aparrels.png" alt="TRUB-aparrels Page Screenshot" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-                        </div>
+                    <a href="https://theshadesofyou.wixsite.com/campaign" target="_blank" class="certificate-btn" style="margin-top:0.75rem;">
+                        <i class="fas fa-globe"></i>
+                        Visit Wix Site
+                    </a>
+                </div>
+                <!-- SLG -->
+                <div class="certificate-card scale-in">
+                    <div class="certificate-title">South League Gaming (SLG)</div>
+                    <div class="certificate-issuer">Gaming Community Page</div>
+                    <div class="certificate-description">A gaming page created and managed with friends, focused on community engagement and gaming content.</div>
+                    <div class="social-media-followers"><i class="fas fa-users"></i> 397 followers</div>
+                    <div class="social-media-images">
+                        <img src="SLG.png" alt="SLG Page Screenshot" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
                     </div>
                 </div>
+
+                <!-- Hidden items (1) -->
+                <div class="certificate-card scale-in hidden-social">
+                    <!-- TRUB-aparrels -->
+                    <div class="certificate-title">TRUB-aparrels</div>
+                    <div class="certificate-issuer">Small Business Page</div>
+                    <div class="certificate-description">A business page for reselling OEM shoes, managed content, branding, and customer engagement.</div>
+                    <div class="social-media-followers"><i class="fas fa-thumbs-up"></i> 122 likes &nbsp; <i class="fas fa-users"></i> 113 followers</div>
+                    <div class="social-media-images">
+                        <img src="TRUB-Aparrels.png" alt="TRUB-aparrels Page Screenshot" class="zoomable" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="show-more-container">
+                <button id="showMoreSocial" class="show-more-btn">
+                    <span class="show-more-text">Show More</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </section>
 
         <!-- Development Portfolio Section -->
         <section id="development" class="section">
-            <div class="floating-element"></div>
             <h2 class="section-title fade-in">Development Portfolio</h2>
             <p class="section-subtitle fade-in">A showcase of web applications, websites, and coding projects</p>
-            <div class="certificates-container">
-                <div class="certificates-scroll">
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon"><i class="fas fa-database"></i></div>
-                        <div class="certificate-title">PhilHealth Website</div>
-                        <div class="certificate-issuer">Full-Stack Project</div>
-                        <div class="certificate-description">
-                            A full-stack web application for PhilHealth member registration, dependent management, and secure account creation. Features robust CRUD, admin dashboard, PDF reporting, and a modern UI.
-                        </div>
-                        <a href="https://github.com/andrei13spot/philhealth_website" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
+            <div class="dev-portfolio-grid">
+                <!-- Initial visible projects -->
+                <div class="certificate-card scale-in">
+                    <div class="certificate-icon"><i class="fas fa-database"></i></div>
+                    <div class="certificate-title">PhilHealth Website</div>
+                    <div class="certificate-issuer">Full-Stack Project</div>
+                    <div class="certificate-description">
+                        A full-stack web application for PhilHealth member registration, dependent management, and secure account creation. Features robust CRUD, admin dashboard, PDF reporting, and a modern UI.
                     </div>
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon"><i class="fas fa-robot"></i></div>
-                        <div class="certificate-title">AI Prompt Generator Portfolio</div>
-                        <div class="certificate-issuer">AI/Frontend Project</div>
-                        <div class="certificate-description">
-                            A portfolio project demonstrating advanced prompt engineering and interactive web UI. Built with HTML and CSS, focused on creative AI prompt generation.
-                        </div>
-                        <a href="https://github.com/andrei13spot/ai-prompt-generator-portfolio" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                    </div>
-                    <div class="certificate-card scale-in">
-                        <div class="certificate-icon"><i class="fas fa-globe"></i></div>
-                        <div class="certificate-title">The Freedom Geek Portfolio</div>
-                        <div class="certificate-issuer">Web Portfolio</div>
-                        <div class="certificate-description">
-                            A portfolio website for The Freedom Geek, highlighting web development, automation, and virtual assistant services with a modern layout and project showcases.
-                        </div>
-                        <a href="https://github.com/andrei13spot/theFreedomGeekportfolio" target="_blank" class="certificate-btn">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                    </div>
+                    <a href="https://github.com/andrei13spot/philhealth_website" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
                 </div>
+
+                <div class="certificate-card scale-in">
+                    <div class="certificate-icon"><i class="fas fa-robot"></i></div>
+                    <div class="certificate-title">AI Prompt Generator Portfolio</div>
+                    <div class="certificate-issuer">AI/Frontend Project</div>
+                    <div class="certificate-description">
+                        A portfolio project demonstrating advanced prompt engineering and interactive web UI. Built with HTML and CSS, focused on creative AI prompt generation.
+                    </div>
+                    <a href="https://github.com/andrei13spot/ai-prompt-generator-portfolio" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+
+                <!-- Hidden projects (initially) -->
+                <div class="certificate-card scale-in hidden-dev">
+                    <div class="certificate-icon"><i class="fas fa-globe"></i></div>
+                    <div class="certificate-title">The Freedom Geek Portfolio</div>
+                    <div class="certificate-issuer">Web Portfolio</div>
+                    <div class="certificate-description">
+                        A portfolio website for The Freedom Geek, highlighting web development, automation, and virtual assistant services with a modern layout and project showcases.
+                    </div>
+                    <a href="https://github.com/andrei13spot/theFreedomGeekportfolio" target="_blank" class="certificate-btn">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="show-more-container">
+                <button id="showMoreDev" class="show-more-btn">
+                    <span class="show-more-text">Show More</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
-            <div class="floating-element"></div>
             <h2 class="section-title fade-in">Let's Connect</h2>
             <p class="section-subtitle fade-in">Ready to discuss how I can help your business grow and succeed</p>
             
@@ -512,27 +564,34 @@
                         <li>Technical expertise in CRM and web development</li>
                         <li>Creative solutions for process optimization</li>
                         <li>Committed to long-term client success</li>
-                        <li>Ready for remote, flexible, and global work</li>
+                <li>Ready for remote, flexible, and global work</li>
             </ul>
-        </div>
+                </div>
             </div>
         </section>
 
         <!-- About Section (full width, grid layout, updated stats) -->
         <section id="about" class="section">
-            <div class="floating-element"></div>
+            <div class="floating-element large"></div>
+            <div class="floating-element medium"></div>
+            <div class="floating-element small"></div>
             <h2 class="section-title fade-in">About Me</h2>
             <p class="section-subtitle fade-in">A relationship-driven professional passionate about helping businesses grow through exceptional client support and technical expertise</p>
             <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center;">
                 <div class="about-image slide-in-left">
                     <img src="aboutmepic.jpg" alt="John Andrei Nañola" />
+                    <div class="about-name-container">
+                        <h3 class="about-name">John Andrei Nañola</h3>
+                        <div class="name-underline"></div>
+                        <p class="about-title">Virtual Assistant</p>
+                    </div>
                 </div>
                 <div class="about-content slide-in-right">
                     <div class="about-text">
                         <h3>Transforming Client Relationships</h3>
                         <p>With over 2 years of experience in customer service and relationship management, I specialize in building trust and delivering exceptional value to clients. My background spans from financial services to healthcare, giving me a unique perspective on diverse business needs.</p>
                         <p>I thrive on solving complex problems, streamlining processes, and ensuring every client interaction leaves a lasting positive impression. My technical skills in web development and CRM management allow me to provide comprehensive support that goes beyond traditional virtual assistance.</p>
-                        <p><strong>As a Virtual Assistant, versatility is my greatest asset.</strong> I adapt quickly to new tools, industries, and challenges—whether it's managing social media, designing graphics, building web solutions, or supporting business operations. My multi-disciplinary skill set and eagerness to learn ensure I can deliver value in any environment, making me a reliable partner for your evolving business needs.</p>
+                        <p><strong>As a Virtual Assistant, versatility is my greatest asset.</strong> I adapt quickly to new tools, industries, and challenges, whether it's managing social media, designing graphics, building web solutions, or supporting business operations. My multi-disciplinary skill set and eagerness to learn ensure I can deliver value in any environment, making me a reliable partner for your evolving business needs.</p>
                     </div>
                     <div class="about-stats">
                         <div class="stat-item">
@@ -544,8 +603,8 @@
                             <div class="stat-label">Skills Mastered</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-target="12">0</div>
-                            <div class="stat-label">Projects Completed</div>
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Certifications</div>
                         </div>
                     </div>
                 </div>
@@ -560,20 +619,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <h3>John Andrei Nañola</h3>
-            <p>Aspiring Virtual Assistant with Versatility | Building meaningful relationships and driving business growth</p>
-            <div class="social-links">
-                <a href="https://github.com/andrei13spot" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/john-andrei-nañola" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:amphibians46@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+        <div class="footer-content" style="text-align: center; padding: 10px 0; color: var(--text-color);">
+            <p style="margin: 0;">© 2025 John Andrei Nañola. All rights reserved.</p>
+            <p style="margin: 5px 0 0 0; font-size: 0.9em;">Last updated: June 2025</p>
         </div>
     </footer>
 
