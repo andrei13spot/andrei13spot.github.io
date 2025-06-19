@@ -333,6 +333,18 @@ body:not(.dark) .dropdown-menu li a:focus {
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
+    background: #0a0a0a;
+}
+
+.section:nth-of-type(even) {
+    background: #111827;
+}
+
+body:not(.dark) .section {
+    background: #fff;
+}
+body:not(.dark) .section:nth-of-type(even) {
+    background: #f3f6fa;
 }
 
 .section::before {
@@ -467,7 +479,6 @@ body:not(.dark) .stat-label {
 .skill-category:hover,
 .certificate-card:hover,
 .timeline-content:hover {
-    /* Remove scale, only shadow and border */
     box-shadow: 0 10px 32px rgba(59, 130, 246, 0.18);
     border-color: #3b82f6;
     z-index: 2;
@@ -559,9 +570,9 @@ body:not(.dark) .stat-label {
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 10px 32px rgba(59, 130, 246, 0.18);
     border-color: #3b82f6;
+    z-index: 2;
 }
 
 .timeline-content::before {
@@ -642,9 +653,9 @@ body:not(.dark) .stat-label {
 }
 
 .certificate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 10px 32px rgba(59, 130, 246, 0.18);
     border-color: #3b82f6;
+    z-index: 2;
 }
 
 .certificate-icon {
