@@ -1,3 +1,11 @@
+// Add this at the beginning of the file
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 // Loading Screen
 window.addEventListener('load', () => {
     setTimeout(() => {
@@ -378,5 +386,113 @@ modal.addEventListener('click', (e) => {
         modal.classList.remove('active');
         modalImg.src = '';
         modalCaption.textContent = '';
+    }
+});
+
+// Certificates Show More/Less functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreBtn = document.getElementById('showMoreCerts');
+    const hiddenCerts = document.querySelectorAll('.hidden-cert');
+    let isExpanded = false;
+
+    if (showMoreBtn && hiddenCerts.length > 0) {
+        showMoreBtn.addEventListener('click', function() {
+            isExpanded = !isExpanded;
+            
+            hiddenCerts.forEach(cert => {
+                cert.style.display = isExpanded ? 'block' : 'none';
+            });
+
+            // Update button text and icon
+            const btnText = showMoreBtn.querySelector('.show-more-text');
+            btnText.textContent = isExpanded ? 'Show Less' : 'Show More';
+            showMoreBtn.classList.toggle('active');
+
+            // Smooth scroll to newly revealed certificates if expanding
+            if (isExpanded) {
+                hiddenCerts[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
+
+// Development Portfolio Show More/Less functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreDevBtn = document.getElementById('showMoreDev');
+    const hiddenDevProjects = document.querySelectorAll('.hidden-dev');
+    let isDevExpanded = false;
+
+    if (showMoreDevBtn && hiddenDevProjects.length > 0) {
+        showMoreDevBtn.addEventListener('click', function() {
+            isDevExpanded = !isDevExpanded;
+            
+            hiddenDevProjects.forEach(project => {
+                project.style.display = isDevExpanded ? 'block' : 'none';
+            });
+
+            // Update button text and icon
+            const btnText = showMoreDevBtn.querySelector('.show-more-text');
+            btnText.textContent = isDevExpanded ? 'Show Less' : 'Show More';
+            showMoreDevBtn.classList.toggle('active');
+
+            // Smooth scroll to newly revealed projects if expanding
+            if (isDevExpanded) {
+                hiddenDevProjects[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
+
+// Graphic Design Show More/Less functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreDesignBtn = document.getElementById('showMoreDesign');
+    const hiddenDesigns = document.querySelectorAll('.hidden-design');
+    let isDesignExpanded = false;
+
+    if (showMoreDesignBtn && hiddenDesigns.length > 0) {
+        showMoreDesignBtn.addEventListener('click', function() {
+            isDesignExpanded = !isDesignExpanded;
+            
+            hiddenDesigns.forEach(design => {
+                design.style.display = isDesignExpanded ? 'block' : 'none';
+            });
+
+            // Update button text and icon
+            const btnText = showMoreDesignBtn.querySelector('.show-more-text');
+            btnText.textContent = isDesignExpanded ? 'Show Less' : 'Show More';
+            showMoreDesignBtn.classList.toggle('active');
+
+            // Smooth scroll to newly revealed designs if expanding
+            if (isDesignExpanded) {
+                hiddenDesigns[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
+
+// Social Media Show More/Less functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreSocialBtn = document.getElementById('showMoreSocial');
+    const hiddenSocial = document.querySelectorAll('.hidden-social');
+    let isSocialExpanded = false;
+
+    if (showMoreSocialBtn && hiddenSocial.length > 0) {
+        showMoreSocialBtn.addEventListener('click', function() {
+            isSocialExpanded = !isSocialExpanded;
+            
+            hiddenSocial.forEach(item => {
+                item.style.display = isSocialExpanded ? 'block' : 'none';
+            });
+
+            // Update button text and icon
+            const btnText = showMoreSocialBtn.querySelector('.show-more-text');
+            btnText.textContent = isSocialExpanded ? 'Show Less' : 'Show More';
+            showMoreSocialBtn.classList.toggle('active');
+
+            // Smooth scroll to newly revealed items if expanding
+            if (isSocialExpanded) {
+                hiddenSocial[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     }
 }); 
