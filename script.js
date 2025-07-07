@@ -283,33 +283,41 @@ scrollToTopBtn.addEventListener('mouseleave', () => {
 // Enhanced mobile responsiveness
 function handleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
-    const hamburger = document.createElement('div');
-    hamburger.className = 'hamburger';
-    hamburger.innerHTML = '<span></span><span></span><span></span>';
-    hamburger.style.cssText = `
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 4px;
-    `;
-    
-    hamburger.querySelectorAll('span').forEach(span => {
-        span.style.cssText = `
-            width: 25px;
-            height: 3px;
-            background: #3b82f6;
-            transition: 0.3s;
-        `;
-    });
+    const navContainer = document.querySelector('.nav-container');
+    let hamburger = document.querySelector('.hamburger');
 
     if (window.innerWidth <= 768) {
-        document.querySelector('.nav-container').appendChild(hamburger);
-        hamburger.style.display = 'flex';
-        
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
+        if (!hamburger) {
+            hamburger = document.createElement('div');
+            hamburger.className = 'hamburger';
+            hamburger.innerHTML = '<span></span><span></span><span></span>';
+            hamburger.style.cssText = `
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 4px;
+            `;
+            hamburger.querySelectorAll('span').forEach(span => {
+                span.style.cssText = `
+                    width: 25px;
+                    height: 3px;
+                    background: #3b82f6;
+                    transition: 0.3s;
+                `;
+            });
+            navContainer.appendChild(hamburger);
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        } else {
+            hamburger.style.display = 'flex';
+        }
+    } else {
+        if (hamburger) {
+            hamburger.remove();
+            navMenu.classList.remove('active');
+        }
     }
 }
 
